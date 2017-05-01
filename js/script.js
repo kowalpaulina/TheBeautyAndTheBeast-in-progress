@@ -315,7 +315,6 @@ function findPerson(person){
 function filterByDate(filterByDateInput,person){
         arrayOfDate=[];
         selectedDate = filterByDateInput;
-        console.log(selectedDate);
     
         if(filterByDateInput ==='1.07.1990'){filterByDateInput = '1.7.1990';}    
         for(var i = 0; i < person.length; i++) {
@@ -335,7 +334,12 @@ function filterByDate(filterByDateInput,person){
         if(selectedDate==null){
             displayTable(person);
         }
-
+        
+        //clear other inputs
+        clearInputsValue();
+        //leave input value for date
+        $("#datepicker").datepicker("setDate", filterByDateInput);
+        
         }
 
 
@@ -416,7 +420,7 @@ function sortTable(data,atribute,order){
             second = convertDate(second);
             
             if(order=="asc"){
-                console.log(order);
+               
                 if(first > second) return 1;
                 if(first < second) return -1;
             }else{
