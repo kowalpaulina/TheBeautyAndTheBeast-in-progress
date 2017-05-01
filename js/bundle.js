@@ -3872,7 +3872,7 @@ function changePage(page, dataToDisplay, optionalDateParameter) {
     var rowsPerPage = 5;
 
     for (var i = (page - 1) * rowsPerPage; i < page * rowsPerPage && i < dataToDisplay.length; i++) {
-        var prevPage = function prevPage() {
+        var prevPage = function prevPage(event) {
             event.stopImmediatePropagation();
             if (currentPage > 1) {
                 currentPage--;
@@ -3880,7 +3880,7 @@ function changePage(page, dataToDisplay, optionalDateParameter) {
             }
         };
 
-        var nextPage = function nextPage() {
+        var nextPage = function nextPage(event) {
             event.stopImmediatePropagation();
             if (currentPage < numberOfPages) {
                 currentPage++;

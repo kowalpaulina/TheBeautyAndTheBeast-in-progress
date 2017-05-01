@@ -167,14 +167,14 @@ function changePage(page,dataToDisplay,optionalDateParameter){
         nextPageButton.style.display = "flex";
     }
 
-function prevPage(){
+function prevPage(event){
     event.stopImmediatePropagation();
     if (currentPage > 1) {
         currentPage--;
         changePage(currentPage,currentDataToDisplay,currentDateParameter);
     }
 }
-function nextPage(){
+function nextPage(event){
     event.stopImmediatePropagation();    
     if (currentPage < numberOfPages) {
         currentPage++;
