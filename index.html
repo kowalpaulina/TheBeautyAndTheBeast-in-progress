@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Beauty or the Beast | Sort and filter table</title>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="style/icons/css/ionicons.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-title">The Beauty or the Beast</h1>
+        <h2 class="subtitle">Filtrowanie, sortowanie po danych służby Pięknej i Bestii</h2>
+    </header>
+    <div class="row">
+        <h3 class="filter">Filtrowanie - warunki nie łączą się</h3> 
+        <form class="filterForm" action="">
+          <input type="text" placeholder="Id" id="filterById">
+          <input type="text" placeholder="Imię" id="filterByFirstName">
+          <input type="text" placeholder="Nazwisko" id="filterByLastName">
+          <input value="" id="datepicker" placeholder="Data">
+          <input type="text" placeholder="Funkcja" id="filterbyFunction">
+          <input type="text" placeholder="Doświadczenie" id="filterByExperience">
+        </form>
+        <button class="showAll" id="showAll">Pokaż wszystko</button>
+
+        <table id="table" class="table">
+        <thead>
+            <tr>
+                <th><span>ID</span>
+                     <div class="triangle">
+                          <div class="triangle-up" id="sortById"></div>
+                          <div class="triangle-down" id="sortByIdDesc"></div>
+                      </div>
+                </th>
+                <th><span>Imię</span>
+                    <div class="triangle">
+                        <div class="triangle-up" id="sortByName"></div>
+                        <div class="triangle-down" id="sortByNameDesc"></div>
+                    </div>
+                </th>
+                <th><span>Nazwisko</span>
+                     <div class="triangle">
+                        <div class="triangle-up" id="sortByLastName"></div>
+                        <div class="triangle-down" id="sortByLastNameDesc"></div>
+                  </div>
+                </th>
+              <th><span>Data</span>
+              <div class="triangle">
+                      <div class="triangle-up" id="sortByDate"></div>
+                      <div class="triangle-down" id="sortByDateDesc"></div>
+                  </div>
+            </th>
+              <th><span>Funkcja</span>
+              <div class="triangle">
+                      <div class="triangle-up" id="sortByFunction"></div>
+                      <div class="triangle-down" id="sortByFunctionDesc"></div>
+                  </div></th>
+              <th><span>Doświadczenie</span>
+              <div class="triangle">
+                      <div class="triangle-up" id="sortByExperience"></div>
+                      <div class="triangle-down" id="sortByExperienceDesc"></div>
+                  </div></th>
+            </tr>
+          </thead>
+          <tbody id="tBody">
+          </tbody>
+        </table>
+    </div>
+    <div class="pages">strona:&nbsp;<span id="page"></span></div>
+
+    <div class="pagination">
+        <button class="paginate" id="previousPage">Poprzednia strona</button>
+        <button class="paginate" id="nextPage">Następna strona</button>
+    </div>
+    <footer class="footer">
+            <p class="copyright"><small>Developed by Paulina Kowal, 2017</small></p>
+            <div class="icon">
+                <a href="http://www.paulinakowal.pl" target="_blank"><i class="ion-ios-world ion-social-external-link"></i></a>
+                <a href="https://github.com/kowalpaulina" target="_blank"><i class="ion-social-github ion-social-external-link"></i></a>
+            </div>          
+    </footer>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+<script src="js/bundle.js"></script> 
+</body>
+</html>
