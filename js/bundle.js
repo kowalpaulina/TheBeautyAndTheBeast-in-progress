@@ -3768,11 +3768,18 @@ function setDataPicker(person) {
         changeMonth: true,
         changeYear: true,
         yearRange: "-100:+0",
+        monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
+        monthNamesShort: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
+        dayNames: ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
+        dayNamesShort: ['Sb', 'Pn', 'Wt', 'Śr', 'Czw', 'Pt', 'Sb'],
+        dayNamesMin: ['Sb', 'Pn', 'Wt', 'Śr', 'Czw', 'Pt', 'Sb'],
+        weekHeader: 'Tydzień',
         pickDate: false,
         pickSeconds: false,
         pick12HourFormat: false,
         onClose: function onClose() {
             var filterByDateInput = $(this).datepicker('getDate');
+            console.log(filterByDateInput);
             if (filterByDateInput != null) {
                 filterByDateInput = filterByDateInput.toLocaleDateString();
             }
@@ -4076,7 +4083,7 @@ function filterByDate(filterByDateInput, person) {
     //clear other inputs
     clearInputsValue();
     //leave input value for date
-    $("#datepicker").datepicker("setDate", filterByDateInput);
+    $("#datepicker").datepicker().val(filterByDateInput);
 }
 
 //SORTING
@@ -4189,6 +4196,7 @@ function convertDate(stringDateParametr) {
     stringDateParametr;
     regex = /[.:\s]/;
     var splitdate = stringDateParametr.split(regex);
+    console.log(splitdate);
     var date = new Date(splitdate[2], splitdate[1] - 1, splitdate[0], splitdate[3], splitdate[4]);
     var timestamp = date.getTime();
     return timestamp;
